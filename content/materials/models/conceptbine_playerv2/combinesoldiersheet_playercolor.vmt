@@ -1,0 +1,52 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" 	"Models/conceptbine_playerv2/combinesoldiersheet_playercolor"
+  	"$bumpmap" "models\conceptbine_playerv2/Combinesoldiersheet_n"
+	"$selfillum" 1
+	"$selfillummask" "models/conceptbine_playerv2/Combinesoldiersheet_g"
+	"$phong" "1"
+	"$phongboost"   "10"
+	"$phongfresnelranges" "[0.2 .5 10]"
+	"$phongalbedotint" "1"
+
+// Rim lighting parameters
+	"$rimlight" "1"												// To enable rim lighting (requires phong)
+	"$rimlightexponent" "5"										// Exponent for phong component of rim lighting	
+	"$rimlightboost" "2"										// Boost for ambient cube component of rim lighting
+
+	
+	// --- Test values. Comment the PlayerColor proxy to use one of these.
+	// "$selfillumtint" "[0.3 1.8 2.1]" // Default
+	// "$selfillumtint" "[1.5 2.2 1.9]" // White
+	// "$selfillumtint" "[3.5 0.3 0.2]" // Red
+	// "$selfillumtint" "[2.8 1.7 0.4]" // Yellow
+	// "$selfillumtint" "[0.5 2.1 0.8]" // Green (medical)
+	// "$selfillumtint" "[1.0 2.4 0.4]" // Green (forest)
+	// "$selfillumtint" "[0.5 0.6 3.1]" // Blue (lavender)
+	// "$selfillumtint" "[1.4 0.6 2.5]" // Purple
+	// "$selfillumtint" "[1.9 0.6 1.1]" // Pink
+	
+	Proxies
+	{
+		PlayerColor
+		{
+			resultVar	$selfillumtint
+		}
+		Multiply // doing this to make brighter & more saturated
+		{
+		    srcVar1 "$selfillumtint"
+		    srcVar2 "$rimlightboost"
+			resultVar "$selfillumtint"
+		}
+		Clamp
+		{
+			min 0.10
+			max 3.00
+			srcVar1 "$selfillumtint"
+			resultVar "$selfillumtint"
+		}
+	}
+}
+
+
+

@@ -1,0 +1,9 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "Models/conceptbine_playerv2/blank"
+	"$nodecal" 1
+
+// Transparency
+	"$translucent" 1
+	"$nocull" 1
+}

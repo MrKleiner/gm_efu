@@ -1,0 +1,12 @@
+"Vertexlitgeneric"
+{
+	"$basetexture" 	"models\weapons\w_models\avp2\avp2pwm"
+	"$nocull"     "1"
+
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ 0.1 0.1 0.1 ]"
+
+	"$rimlight" "1"
+	"$rimlightexponent" "28"	
+	"$rimlightboost" "0.2"
+}

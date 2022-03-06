@@ -1,0 +1,7 @@
+"VertexLitGeneric"
+{
+	"$baseTexture" 	"Models/conceptbine_playerv2/beret_sheet"
+	"$basealphaenvmapmask" 1
+	"$envmap" "env_cubemap"	
+//	"$halflambert" 1
+}
